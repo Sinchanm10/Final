@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification - PolyTask</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('otp.jpg');
+      background-size: contain; 
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 15%;
+      padding: 10px;
+      margin: 10px 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .password-icon {
+      position: absolute;
+      right: 10px;
+      top: 50px;
+      color: #777;
+      cursor: pointer;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 150%;
+      background-color: #e8e8e8;
+      padding-top: 50px;
+      transition: left 0.3s ease-in-out;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #000000;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #ebebeb;
+    }
+    .sidebar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000000;
+      cursor: pointer;
+    }
+    .hamburger-icon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #000000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>OTP Verification</h2>
+  <form>
+    <input type="text" maxlength="1" placeholder="0" required oninput="moveToNext(this, 'box2')">
+    <input type="text" maxlength="1" placeholder="0" required oninput="moveToNext(this, 'box3')" id="box2">
+    <input type="text" maxlength="1" placeholder="0" required oninput="moveToNext(this, 'box4')" id="box3">
+    <input type="text" maxlength="1" placeholder="0" required id="box4"><br>
+    <button type="submit" onclick="redirectToPasswordPage()">Verify</button>
+  </form>
+</div>
+
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html">Logout</a>
+  <span class="close-btn" onclick="closeSidebar()">&#10006;</span>
+</div>
+
+<i class="fas fa-bars hamburger-icon" onclick="openSidebar()"></i>
+
+<script>
+  function openSidebar() {
+    document.getElementById("sidebar").style.left = "0";
+  }
+
+  function closeSidebar() {
+    document.getElementById("sidebar").style.left = "-250px";
+  }
+
+  function redirectToPasswordPage() {
+    window.location.href = "password.html";
+  }
+
+  function moveToNext(currentInput, nextInputId) {
+    if (currentInput.value.length == currentInput.maxLength) {
+      document.getElementById(nextInputId).focus();
+    }
+  }
+</script>
+
+</body>
+</html>

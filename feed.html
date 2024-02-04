@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer Feed - Your Marketplace</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 20px;
+      overflow-y: auto; /* Enable scrolling */
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Align button to the right */
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .profile img {
+      width: 80px; /* Increased profile picture size */
+      height: 80px; /* Increased profile picture size */
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-name {
+      font-weight: bold;
+    }
+    .average-rating {
+      color: #007bff;
+    }
+    .career {
+      color: #555;
+    }
+    /* Updated CSS for visit profile button */
+    .visit-profile-btn {
+      padding: 5px 10px;
+      background-color: #007bff; /* Blue background color */
+      color: #fff; /* White text color */
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .visit-profile-btn:hover {
+      background-color: #0056b3; /* Darker shade of blue on hover */
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #ededed;
+      padding-top: 50px;
+      transition: left 0.3s ease-in-out;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #000000;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #e7e7e7;
+    }
+    .sidebar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000000;
+      cursor: pointer;
+    }
+    .hamburger-icon {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      color: #000000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Freelancer Feed</h2>
+  <div class="profile" onclick="visitProfile('Mike Jason', 4, 'Photographer')">
+    <img src="Mike.jpg" alt="Mike Jason">
+    <div class="profile-info">
+      <div class="profile-name">Mike Jason</div>
+      <div class="average-rating">Average Rating: 4</div>
+      <div class="career">Photographer</div>
+    </div>    
+    <button class="visit-profile-btn" onclick="window.location.href='U1.html'">Visit Profile</button>
+  </div>
+  <div class="profile" onclick="visitProfile('Tim Mount', 4.5, 'Web Developer')">
+    <img src="Tim.jpg" alt="Tim Mount">
+    <div class="profile-info">
+      <div class="profile-name">Tim Mount</div>
+      <div class="average-rating">Average Rating: 4.5</div>
+      <div class="career">Web Developer</div>
+    </div>
+    <button class="visit-profile-btn" onclick="window.location.href='U2.html'">Visit Profile</button>
+  </div>
+  <div class="profile" onclick="visitProfile('Emma Harris', 3.9, 'Copywriter')">
+    <img src="Emma.jpeg" alt="Emma Harris">
+    <div class="profile-info">
+      <div class="profile-name">Emma Harris</div>
+      <div class="average-rating">Average Rating: 3.9</div>
+      <div class="career">Graphic Designer</div>
+    </div>
+    <button class="visit-profile-btn" onclick="window.location.href='U3.html'">Visit Profile</button>
+  </div>
+</div>
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html">Logout</a>
+  <span class="close-btn" onclick="closeSidebar()">&#10006;</span>
+</div>
+<i class="fas fa-bars hamburger-icon" onclick="openSidebar()"></i>
+<script>
+  function openSidebar() {
+    document.getElementById("sidebar").style.left = "0";
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").style.left = "-250px";
+  }
+  function visitProfile(name, rating, career) {
+    alert("Visiting " + name + "'s profile with an average rating of " + rating + " as a " + career);
+    // You can implement the logic to redirect to the freelancer's profile page here
+  }
+</script>
+</body>
+</html>

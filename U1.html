@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mike Jason - Photographer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative; /* Added */
+    }
+    .profile-container {
+      background-color: #f2f2f2;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .profile-header {
+      background-image: url('cover_photo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #000000;
+    }
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-right: 20px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h1 {
+      margin: 0;
+    }
+    .profession {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .proof-of-work img {
+      width: 200px; /* Increased width */
+      height: auto; /* Maintain aspect ratio */
+      margin-right: 10px;
+    }
+    .contact-button {
+      padding: 15px 30px; /* Updated padding */
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 10px; /* Increased border-radius */
+      cursor: pointer;
+      font-size: 18px; /* Increased font size */
+      transition: background-color 0.3s ease; /* Added transition */
+    }
+    .contact-button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #ededed;
+      padding-top: 50px;
+      transition: left 0.3s ease-in-out;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #000000;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #e7e7e7;
+    }
+    .sidebar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000000;
+      cursor: pointer;
+    }
+    .hamburger-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #000000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<i class="fas fa-bars hamburger-icon" onclick="openSidebar()"></i>
+<div class="profile-container">
+  <div class="profile-header">
+    <img src="Mike.jpg" alt="Mike Jason" class="profile-picture">
+    <div class="profile-info"><br>
+      <h1>Mike Jason</h1><br>
+      <div class="profession">Photographer</div><br>
+      <div>Rate: $1000 per event</div><br>
+      <div>Email: mike.jason@gmail.com</div><br>
+      <button class="contact-button" onclick="window.location.href='MChat.html'">Chat with Mike</button><br><br>
+      <div>Average Rating: 4</div>
+    </div>
+  </div>
+  <div class="proof-of-work">
+    <h2>Proof of Work</h2>
+    <img src="MW1.jpg" alt="Work Sample 1">
+    <img src="MW2.jpg" alt="Work Sample 2">
+  </div>
+</div>
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html">Logout</a>
+  <span class="close-btn" onclick="closeSidebar()">&#10006;</span>
+</div>
+
+<script>
+  function openSidebar() {
+    document.getElementById("sidebar").style.left = "0";
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").style.left = "-250px";
+  }
+</script>
+</body>
+</html>
