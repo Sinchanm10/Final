@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyTask</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('index.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px); 
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 500px;
+            height: 450px;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .buttons button {
+            padding: 20px 40px;
+            margin: 0 30px;
+            font-size: 30px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .buttons button:hover {
+            background-color: #75020d;
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+    <img src="Logo.png" alt="PolyTask Logo">
+</div>
+<div class="buttons">
+    <button onclick="window.location.href='login.html'">Login</button>
+    <button onclick="window.location.href='signup.html'">Signup</button>
+</div>
+</body>
+</html>
